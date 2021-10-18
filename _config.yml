@@ -6,9 +6,9 @@ url: "https://coveragehinch.github.io"  # http://localhost:4000
 title_slog: "" # Home pge slog
 title_sep: "" # Home
 # verification
-bing: ""
-yandex: ""
-google: ""
+bing: "9F9B2F63455A0E78D3DA573BC1B0BA46"
+yandex: "d95f5d37bdedbb42"
+google: "lNX2pT-oCOLIG2BcxV9Z5KRQlWcDeHYpkGxuVrrVWGk"
 # encoding timezone
 encoding: "utf-8"
 timezone: UTC
