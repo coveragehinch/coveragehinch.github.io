@@ -1,0 +1,546 @@
+<!doctype html>
+<html>
+<head>
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
+    <link rel="dns-prefetch" href="//images1-focus-opensocial.googleusercontent.com" />
+    <link rel="dns-prefetch" href="//static.addtoany.com" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="msvalidate.01" content="9F9B2F63455A0E78D3DA573BC1B0BA46" />
+    <meta name="yandex-verification" content="d95f5d37bdedbb42" />
+    <meta name="google-site-verification" content="lNX2pT-oCOLIG2BcxV9Z5KRQlWcDeHYpkGxuVrrVWGk" />
+    <meta charset="UTF-8" />
+    <title>Bitwise Operators in C (Part 1)</title>
+    <meta name="description" content="C Programming &amp;amp; Data Structures: Bitwise Operators in C (Part 1)Topics discussed:1. Introduction to Bitwise Operators.2. Ty..." />
+	<meta name="keywords" content="bitwise operators,bitwise operator in c,bitwise and" />
+    <meta property="og:site_name" content="CoverageHinch" />
+    <meta property="og:url" content="https://coveragehinch.github.io/bitwise-operators-in-c-part-1-c-programming-amp-data-structures-bitwise.html" />
+    <meta property="og:title" content="Bitwise Operators in C (Part 1)" />
+    <meta property="og:image" content="https://i.ytimg.com/vi/jlQmeyce65Q/hqdefault.jpg" />
+    <meta property="og:description" content="C Programming &amp;amp; Data Structures: Bitwise Operators in C (Part 1)Topics discussed:1. Introduction to Bitwise Operators.2. Ty..." />
+    <meta name='twitter:card' content='summary_large_image' />
+    <link rel="canonical" href="https://coveragehinch.github.io/bitwise-operators-in-c-part-1-c-programming-amp-data-structures-bitwise.html" />
+    <link rel="stylesheet" href="https://coveragehinch.github.io/inc/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+    <nav class="navbar mb-3 navbar-expand-lg navbar-light bg-white mb-4 shadow-sm">
+        <div class="container py-2"><a class="navbar-brand" href="https://coveragehinch.github.io/">CoverageHinch</a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-urls" aria-controls="navbar-urls" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <form action="/search/" class="my-2 my-lg-0 offset-md-2 col-md-6 col-sm-12 px-0 mr-auto">
+                <div class="input-group"><input name="s" class="form-control rounded-0 py-2" type="text" placeholder="video search..." id="example-search-input"><span class="input-group-append"><button aria-label="search" role="button" class="btn btn-secondary rounded-0" type="submit"><span class="px-2"><svg class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path></svg></span></button>
+                    </span>
+                </div>
+                </form>
+                <div class="collapse navbar-collapse flex-md-grow-0" id="navbar-urls">
+
+                </div>
+        </div>
+    </nav>
+    <div class="container min-height-62" >
+        <div class="resp-container" id="top_720"></div>
+        <div class="row">
+            <div class="col-12 col-md-8">
+                <div class="bg-white"><noscript><a href="https://www.youtube.com/watch?v=jlQmeyce65Q"><img alt="Bitwise Operators in C (Part 1)" src="https://i.ytimg.com/vi/jlQmeyce65Q/hqdefault.jpg" /></a></noscript>
+                    <div id="video-player"></div>
+                    <div class="p-3">
+                        <h1 class="h5 video-title bwr">Bitwise Operators in C (Part 1)</h1>
+                        <div class="py-1 row">
+                            <div class="col-12 col-md-6 my-auto"><b class="text-danger">Share</b></div>
+                            <div class="col-12 col-md-6">
+                                <div class="a2a_kit a2a_kit_size_32 a2a_default_style"><a class="a2a_dd" href="https://www.addtoany.com/share"></a><a class="a2a_button_facebook"></a><a class="a2a_button_twitter"></a><a class="a2a_button_reddit"></a><a class="a2a_button_facebook_messenger"></a><a class="a2a_button_whatsapp"></a></div>
+                            </div>
+                        </div>
+                        <div align="center" class="py-1">
+
+                        </div>
+                        <div class="py-1">
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <div class="mb-2 bwr"><strong>Neso Academy</strong><br> Published at : 27 Nov 2021  </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="h-100 d-flex align-items-center justify-content-center"><a  target="_blank" rel="noopener" class="btn btn-block btn-danger bwr" href="https://www.youtube.com/watch?v=jlQmeyce65Q">Subscribe to Neso Academy</a></div>
+                                </div>
+                            </div>
+                            <div class="resp-container" id="in_post_bottomads"></div>
+                        </div>
+                        <div class="py-1">
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <div class="text-center bg-light mb-2 p-1 bwr"><span><span class="pr-1"><svg class="svg-inline--fa fa-eye fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M569.354 231.631C512.969 135.949 407.81 72 288 72 168.14 72 63.004 135.994 6.646 231.631a47.999 47.999 0 0 0 0 48.739C63.031 376.051 168.19 440 288 440c119.86 0 224.996-63.994 281.354-159.631a47.997 47.997 0 0 0 0-48.738zM288 392c-75.162 0-136-60.827-136-136 0-75.162 60.826-136 136-136 75.162 0 136 60.826 136 136 0 75.162-60.826 136-136 136zm104-136c0 57.438-46.562 104-104 104s-104-46.562-104-104c0-17.708 4.431-34.379 12.236-48.973l-.001.032c0 23.651 19.173 42.823 42.824 42.823s42.824-19.173 42.824-42.823c0-23.651-19.173-42.824-42.824-42.824l-.032.001C253.621 156.431 270.292 152 288 152c57.438 0 104 46.562 104 104z"></path></svg></span>                                        328717 views </span>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="text-center bg-light p-1 bwr"><span><span class="pr-1"><svg class="svg-inline--fa fa-thumbs-up fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M104 224H24c-13.255 0-24 10.745-24 24v240c0 13.255 10.745 24 24 24h80c13.255 0 24-10.745 24-24V248c0-13.255-10.745-24-24-24zM64 472c-13.255 0-24-10.745-24-24s10.745-24 24-24 24 10.745 24 24-10.745 24-24 24zM384 81.452c0 42.416-25.97 66.208-33.277 94.548h101.723c33.397 0 59.397 27.746 59.553 58.098.084 17.938-7.546 37.249-19.439 49.197l-.11.11c9.836 23.337 8.237 56.037-9.308 79.469 8.681 25.895-.069 57.704-16.382 74.757 4.298 17.598 2.244 32.575-6.148 44.632C440.202 511.587 389.616 512 346.839 512l-2.845-.001c-48.287-.017-87.806-17.598-119.56-31.725-15.957-7.099-36.821-15.887-52.651-16.178-6.54-.12-11.783-5.457-11.783-11.998v-213.77c0-3.2 1.282-6.271 3.558-8.521 39.614-39.144 56.648-80.587 89.117-113.111 14.804-14.832 20.188-37.236 25.393-58.902C282.515 39.293 291.817 0 312 0c24 0 72 8 72 81.452z"></path></svg></span>                                                5764 </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="text-center bg-light p-1 bwr"><span><span class="pr-1"><svg class="svg-inline--fa fa-thumbs-down fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M0 56v240c0 13.255 10.745 24 24 24h80c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24H24C10.745 32 0 42.745 0 56zm40 200c0-13.255 10.745-24 24-24s24 10.745 24 24-10.745 24-24 24-24-10.745-24-24zm272 256c-20.183 0-29.485-39.293-33.931-57.795-5.206-21.666-10.589-44.07-25.393-58.902-32.469-32.524-49.503-73.967-89.117-113.111a11.98 11.98 0 0 1-3.558-8.521V59.901c0-6.541 5.243-11.878 11.783-11.998 15.831-.29 36.694-9.079 52.651-16.178C256.189 17.598 295.709.017 343.995 0h2.844c42.777 0 93.363.413 113.774 29.737 8.392 12.057 10.446 27.034 6.148 44.632 16.312 17.053 25.063 48.863 16.382 74.757 17.544 23.432 19.143 56.132 9.308 79.469l.11.11c11.893 11.949 19.523 31.259 19.439 49.197-.156 30.352-26.157 58.098-59.553 58.098H350.723C358.03 364.34 384 388.132 384 430.548 384 504 336 512 312 512z"></path></svg></span>                                                180 </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr/>
+                        <div class="py-1 d-md-block bwr" id="video-description">C Programming &amp; Data Structures: Bitwise Operators in C (Part 1)<br />Topics discussed:<br />1. Introduction to Bitwise Operators.<br />2. Types of Bitwise Operators.<br />3. Bitwise AND Operator.<br />4. Bitwise OR Operator.<br />5. Bitwise NOT Operator.<br />6. Difference between bitwise and logical operators.<br /><br />C Programming Lectures: <a rel="nofollow" target="blank" href="https://goo.gl/7Eh2SS">https://goo.gl/7Eh2SS</a><br /><br />Follow Neso Academy on Instagram: @nesoacademy(<a rel="nofollow" target="blank" href="https://bit.ly/2XP63OE)">https://bit.ly/2XP63OE)</a><br />Follow me on Instagram: @jaspreetedu(<a rel="nofollow" target="blank" href="https://bit.ly/2YX26E5)">https://bit.ly/2YX26E5)</a><br /><br />Contribute: <a rel="nofollow" target="blank" href="http://www.nesoacademy.org/donate">http://www.nesoacademy.org/donate</a><br /><br />Memberships: <a rel="nofollow" target="blank" href="https://bit.ly/2U7YSPI">https://bit.ly/2U7YSPI</a><br /><br />Books: <a rel="nofollow" target="blank" href="http://www.nesoacademy.org/recommended-books">http://www.nesoacademy.org/recommended-books</a><br /><br />Website ► <a rel="nofollow" target="blank" href="http://www.nesoacademy.org/">http://www.nesoacademy.org/</a><br />Forum ► <a rel="nofollow" target="blank" href="http://forum.nesoacademy.org/">http://forum.nesoacademy.org/</a><br />Facebook ► <a rel="nofollow" target="blank" href="https://goo.gl/Nt0PmB">https://goo.gl/Nt0PmB</a><br />Twitter      ► <a rel="nofollow" target="blank" href="https://twitter.com/nesoacademy">https://twitter.com/nesoacademy</a><br /><br />Music:<br />Axol x Alex Skrindo - You [NCS Release]<br /><br />#CProgrammingByNeso #CProgramming #BitwiseOperators
+</div>
+                        <div class="d-none"><span>bitwise operators</span><span>bitwise operator in c</span><span>bitwise and</span></div>
+                        <hr/>
+                        <div class="py-3"><div class="resp-container" id="extra_bottomads"><iframe data-aa="1818162" src="//ad.a-ads.com/1818162?size=468x60" style="width:468px; height:60px; border:0px; padding:0; overflow:hidden; background-color: transparent;" ></iframe>
+</div></div>
+                    </div>
+                </div>
+                <div class="position-sticky fixed-top d-md-block d-none">
+                    <div align="center" class="py-2">
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+            <div class="mb-4">
+                <div class="resp-container py-3" id="sidebar_300"></div>
+            </div>
+                
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/braves-ozzie-albies-we-are-signing-freddie-no-matter-what-albies-thanked.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/_XwVu8Is15g/mqdefault.jpg" alt="Braves&#39; Ozzie Albies: We are signing Freddie, no matter what!">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Braves&#39; Ozzie Albies: We are signing Freddie, no matter what!</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/my-pregnancy-nearly-killed-me-start-building-your-ideal-daily-routine-the.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/JIXuo4fclcw/mqdefault.jpg" alt="My pregnancy nearly killed me.">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">My pregnancy nearly killed me.</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/syc-capable-prod-by-evibeats-listen-to-capable-on-streams-br-br-spotify.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/qiieGo3-3q4/mqdefault.jpg" alt="SYC - Capable ( Prod.by Evibeats )">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">SYC - Capable ( Prod.by Evibeats )</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/what-if-what-you-think-is-going-on-is-much-worse-my-patriot-supply-emergency.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/YvcxKeY7rwQ/mqdefault.jpg" alt="What if what you think is going on is Much Worse!">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">What if what you think is going on is Much Worse!</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/harmony-from-skylanders-academy-provided-to-youtube-by-awal-digital-ltd.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/zFMEMQy4Dio/mqdefault.jpg" alt="Harmony (From &quot;Skylanders Academy&quot;)">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Harmony (From &quot;Skylanders Academy&quot;)</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/10-reasons-to-look-forward-to-the-future-johan-norberg-google-zeitgeist.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/QqEUUagTp2I/mqdefault.jpg" alt="10 Reasons to Look Forward to the Future | Johan Norberg | Google Zeitgeist">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">10 Reasons to Look Forward to the Future | Johan Norberg | Google Zeitgeist</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/a-safer-hassle-free-online-registration-experience-in-this-current-time.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/Dyoj5_Fbb6I/mqdefault.jpg" alt="A Safer &amp; Hassle-free Online Registration Experience">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">A Safer &amp; Hassle-free Online Registration Experience</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/lessons-we-ve-learned-from-our-richest-clients-julien-owen-reveal-how-successful.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/x5Br5dCMXj0/mqdefault.jpg" alt="Lessons We&#39;ve Learned From Our Richest Clients: Julien &amp; Owen Reveal How Successful People Think!">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Lessons We&#39;ve Learned From Our Richest Clients: Julien &amp; Owen Reveal How Successful People Think!</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/priceless-hacks-and-crafts-for-smart-parents-best-parenting-smart-tips.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/eLOKR9SqTpo/mqdefault.jpg" alt="PRICELESS HACKS AND CRAFTS FOR SMART PARENTS || Best Parenting Smart Tips and Hacks by 123 GO!">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">PRICELESS HACKS AND CRAFTS FOR SMART PARENTS || Best Parenting Smart Tips and Hacks by 123 GO!</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/pekerjaan-desainer-yang-wajib-kamu-coba-di-tahun-2021-jenis-pekerjaan-desain.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/-IJ0DmdOUBA/mqdefault.jpg" alt="PEKERJAAN DESAINER YANG WAJIB KAMU COBA DI TAHUN 2021">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">PEKERJAAN DESAINER YANG WAJIB KAMU COBA DI TAHUN 2021</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/lykke-li-possibility-tradu-o-lykke-li-br-br-possibility-br-br-there-s-a.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/fMduSNHIPgI/mqdefault.jpg" alt="Lykke Li - Possibility // Tradução">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Lykke Li - Possibility // Tradução</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/tips-to-keep-in-mind-for-h1b-h4-b1-b2-visa-interviews-this-video-explains.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/iW-WztOl_bk/mqdefault.jpg" alt="Tips to keep in mind for H1B/H4/B1/B2 visa interviews">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Tips to keep in mind for H1B/H4/B1/B2 visa interviews</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/fact-check-a-video-marathon-wondering-what-the-facts-are-on-the-issues.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/N6vxXRtbpYg/mqdefault.jpg" alt="Fact-Check: A Video Marathon">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Fact-Check: A Video Marathon</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/5010-x-50to01-chilled-springy-vibes-for-this-one-craig-evans-josh-lewis.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/WMqNWhozifQ/mqdefault.jpg" alt="5010 x 50to01">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">5010 x 50to01</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/staring-into-space-with-lauren-child-a-drink-with-the-idler-idler-editor.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/0DjqVBaIEpo/mqdefault.jpg" alt="Staring into Space with Lauren Child | A Drink with the Idler">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Staring into Space with Lauren Child | A Drink with the Idler</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/wishing-on-hu-tao-rerun-banner-genshin-impact-wishing-on-hu-tao-rerun-banner.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/Ub0yGhunPlg/mqdefault.jpg" alt="Wishing on Hu Tao rerun banner | Genshin Impact">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Wishing on Hu Tao rerun banner | Genshin Impact</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/tim-pool-caught-extremely-bad-covid-and-joe-rogan-offered-to-pay-for-his.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/vySmtgNcl4k/mqdefault.jpg" alt="Tim Pool Caught &#39;Extremely Bad&#39; Covid And Joe Rogan Offered To Pay For His Ivermectin">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Tim Pool Caught &#39;Extremely Bad&#39; Covid And Joe Rogan Offered To Pay For His Ivermectin</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/jon-najarian-the-secret-to-trading-options-why-99-of-traders-get-it-wrong.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/xbZhc0TkkfQ/mqdefault.jpg" alt="JON NAJARIAN - THE SECRET TO TRADING OPTIONS: Why 99% Of Traders Get It Wrong - PART 1/2 | LR">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">JON NAJARIAN - THE SECRET TO TRADING OPTIONS: Why 99% Of Traders Get It Wrong - PART 1/2 | LR</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/somaliland-the-country-that-does-not-exist-i-arte-documentary-in-1991-with.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/iRuxVvPFoqA/mqdefault.jpg" alt="Somaliland, the Country That Does Not Exist I ARTE Documentary">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Somaliland, the Country That Does Not Exist I ARTE Documentary</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/l-aspect-financier-va-t-il-se-transformer-oui-l-chez-rien-a-rel-nofollow.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/u7mR7IHd_Qc/mqdefault.jpg" alt="L&#39;aspect financier, va t-il se transformer? Oui, lâchez rien!">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">L&#39;aspect financier, va t-il se transformer? Oui, lâchez rien!</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/how-to-reduce-bias-in-your-workplace-the-way-we-work-a-ted-series-we-all.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/VEP7_BeXH64/mqdefault.jpg" alt="How to reduce bias in your workplace | The Way We Work, a TED series">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">How to reduce bias in your workplace | The Way We Work, a TED series</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/joe-dolan-good-looking-woman-joe-dolan-good-looking-woman.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/9xqjCkH2hxA/mqdefault.jpg" alt="Joe Dolan - Good looking woman">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Joe Dolan - Good looking woman</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/mix-n-match-aekaz-x-kelly-prod-by-takitik-mix-amp-match-br-artist-aekaz.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/aBuUAZLhjfU/mqdefault.jpg" alt="Mix n&#39; Match - Aekaz x Kelly (prod by Takitik)">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Mix n&#39; Match - Aekaz x Kelly (prod by Takitik)</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/renni-rucci-can-t-be-official-music-video-official-music-video-for-quot.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/LFECS8v_Qa8/mqdefault.jpg" alt="Renni Rucci – Can&#39;t Be (Official Music Video)">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Renni Rucci – Can&#39;t Be (Official Music Video)</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/wearable-winter-2021-fashion-trends-the-style-insider-download-karma-here.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/styTBw6Urfw/mqdefault.jpg" alt="Wearable Winter 2021 Fashion Trends  |  The Style Insider">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Wearable Winter 2021 Fashion Trends  |  The Style Insider</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/the-unbounded-mind-giving-up-ditthi-mana-views-conceit-from-dhamma-cd-the.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/VrxFMArOHgM/mqdefault.jpg" alt="The Unbounded Mind: Giving Up Ditthi Mana, Views &amp; Conceit">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">The Unbounded Mind: Giving Up Ditthi Mana, Views &amp; Conceit</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/thirtieth-midnight-romance-101-x-younha-x-provided-to-youtube-by-loen-entertainment.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/j0OWMsx2qzI/mqdefault.jpg" alt="Thirtieth Midnight (Romance 101 X YOUNHA) (서른 밤째 (바른연애 길잡이 X 윤하))">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Thirtieth Midnight (Romance 101 X YOUNHA) (서른 밤째 (바른연애 길잡이 X 윤하))</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/circulating-pump-basics-how-a-pump-works-hvac-heating-pump-working-principle.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/onIMNox24NI/mqdefault.jpg" alt="Circulating Pump Basics - How a pump works HVAC heating pump working principle">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Circulating Pump Basics - How a pump works HVAC heating pump working principle</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/br-youtube-a-rel-nofollow-target-blank-href-https-youtu-be-iym7-oqfzwi.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/9ixzTnuc6sA/mqdefault.jpg" alt="自家製🎯熱爆食店🔥冇你符🤭咁都做得出🤪獨特🥘難忘💓想🈶️食剩都難😅試過你就知😋頂級回味♦️首創做法♦️加入手剁肉餅🤲味道加倍提升💯啖啖香濃融入口中💯簡單易做🤝口感🈵️足👍大人細路都鍾意❤️街外食唔到😍">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">自家製🎯熱爆食店🔥冇你符🤭咁都做得出🤪獨特🥘難忘💓想🈶️食剩都難😅試過你就知😋頂級回味♦️首創做法♦️加入手剁肉餅🤲味道加倍提升💯啖啖香濃融入口中💯簡單易做🤝口感🈵️足👍大人細路都鍾意❤️街外食唔到😍</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/red-rocket-official-trailer-hd-a24-subscribe-a-rel-nofollow-target-blank.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/Wfndmy-6e28/mqdefault.jpg" alt="Red Rocket | Official Trailer HD | A24">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Red Rocket | Official Trailer HD | A24</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/blind-spot-saint-chaos-lyrics-lyrics-video-for-blind-spot-by-saint-chaos.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/8d0EDxWLZUY/mqdefault.jpg" alt="Blind Spot - Saint Chaos (LYRICS)">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Blind Spot - Saint Chaos (LYRICS)</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/my-glowy-everyday-makeup-skincare-routine-2021-tutorial-follow-me-br-instagram.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/tj5udm6RO20/mqdefault.jpg" alt="MY GLOWY EVERYDAY MAKEUP &amp; SKINCARE ROUTINE | 2021 TUTORIAL">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">MY GLOWY EVERYDAY MAKEUP &amp; SKINCARE ROUTINE | 2021 TUTORIAL</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/the-planet-earth-astronomy-and-space-for-kids-freeschool-a-rel-nofollow.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/IDhapt7nw4A/mqdefault.jpg" alt="The Planet Earth: Astronomy and Space for Kids - FreeSchool">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">The Planet Earth: Astronomy and Space for Kids - FreeSchool</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/integrating-instructional-media-into-the-instructional-process-this-clip.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/UUoEjjFvuzU/mqdefault.jpg" alt="Integrating Instructional Media into the Instructional Process">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Integrating Instructional Media into the Instructional Process</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/mooji-can-i-found-myself-am-i-duality-or-non-duality-or-both-deep-inquiry.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/gmalj3duX_8/mqdefault.jpg" alt="Mooji - Can I Found MYSELF ? AM I Duality or Non-duality Or Both ? DEEP INQUIRY">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Mooji - Can I Found MYSELF ? AM I Duality or Non-duality Or Both ? DEEP INQUIRY</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/they-are-surely-selected-they-are-surely-selected.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/vjD3_R31ZFw/mqdefault.jpg" alt="they are surely selected 😂🤣🤣">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">they are surely selected 😂🤣🤣</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/solving-the-physics-textbook-11-october-7-we-will-no-longer-have-the-courage.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/1UNMhl_gfm0/mqdefault.jpg" alt="Solving the Physics textbook 11 October 7 we will no longer have the courage and emotion">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Solving the Physics textbook 11 October 7 we will no longer have the courage and emotion</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/stumble-upon-lyric-video-album-available-here-a-rel-nofollow-target-blank.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/mnQAjuPwaxo/mqdefault.jpg" alt="Stumble Upon Lyric Video">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Stumble Upon Lyric Video</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/hey-got-a-purse-question-for-ya-hey-got-a-purse-question-for-ya.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/CFIHw7lk-Fc/mqdefault.jpg" alt="Hey! Got a Purse Question For Ya!">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Hey! Got a Purse Question For Ya!</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/house-of-worship-129-with-marty-goetz-live-tuesday-nov-2-2021-join-us-tuesday.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/zBukQiHrjEg/mqdefault.jpg" alt="‘House of Worship 129’ with Marty Goetz LIVE (Tuesday, Nov. 2, 2021)">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">‘House of Worship 129’ with Marty Goetz LIVE (Tuesday, Nov. 2, 2021)</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/saturday-sends-37-it-s-saturday-and-that-means-it-s-time-for-some-mountain.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/oDL4_kUXeDc/mqdefault.jpg" alt="Saturday Sends #37">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Saturday Sends #37</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/mine-eyes-upon-the-lord-continually-are-set-please-visit-our-website-br.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/wamgb8u94hg/mqdefault.jpg" alt="Mine Eyes Upon The Lord Continually Are Set">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Mine Eyes Upon The Lord Continually Are Set</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/must-and-mustn-t-must-and-mustn-t.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/C2jOqrJmFd0/mqdefault.jpg" alt="Must and mustn&#39;t">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Must and mustn&#39;t</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/8-society-uncensored-br-br-br-br-zackie-8-br-br-br-br-br-br-br-br-br-br.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/_SRPOM3qnLg/mqdefault.jpg" alt="8 Γυναίκες Συζητούν: Πατριαρχία, Σεξισμός και Έμφυλη Βία στην Ελληνική Κοινωνία | SOCIETY UNCENSORED">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">8 Γυναίκες Συζητούν: Πατριαρχία, Σεξισμός και Έμφυλη Βία στην Ελληνική Κοινωνία | SOCIETY UNCENSORED</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/off-to-adelaide-to-attend-party-my-brother-takeover-my-vlog-park-mukbang.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/UUyP_Vm19xk/mqdefault.jpg" alt="OFF TO ADELAIDE TO ATTEND PARTY | MY BROTHER TAKEOVER MY VLOG PARK | MUKBANG">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">OFF TO ADELAIDE TO ATTEND PARTY | MY BROTHER TAKEOVER MY VLOG PARK | MUKBANG</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/addicts-nodding-off-my-heart-n-prayers-go-out-to-you-all-get-n-stay-clean.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/y8UMhDKRS8U/mqdefault.jpg" alt="Addicts nodding off">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Addicts nodding off</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/how-much-money-i-make-as-an-artist-passive-and-active-online-art-income.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/6uZ4XsygalU/mqdefault.jpg" alt="How Much Money I Make As An Artist - Passive and Active Online Art Income">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">How Much Money I Make As An Artist - Passive and Active Online Art Income</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/big-bugs-band-african-babytv-to-get-babytv-in-your-country-visit-a-rel.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/2Wp1EPI2ME0/mqdefault.jpg" alt="Big Bugs Band | African | BabyTV">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Big Bugs Band | African | BabyTV</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/tripp-is-shrunken-tripp-shrunk-himself-he-has-to-find-all-the-pieces-to.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/Hc8uVZmhvyA/mqdefault.jpg" alt="Tripp is shrunken!">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Tripp is shrunken!</h2>
+    </div>
+
+            </div>
+    </div>
+    </div>
+    <script type="text/javascript">
+        function load_vid() { var player = document.getElementById('video-player'); player.innerHTML = labnolThumb(); player.onclick = labnolIframe; } function labnolThumb() { return '<div class="d-flex align-items-center justify-content-center"><div class="image-16by9"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/jlQmeyce65Q/hqdefault.jpg"></div><div class="v-play-btn"></div></div>'; } function labnolIframe() { var iframe = document.createElement("iframe"); iframe.setAttribute("src", "//www.youtube-nocookie.com/embed/jlQmeyce65Q?rel=0&amp;showinfo=0"); iframe.setAttribute("frameborder", "0"); iframe.setAttribute("allowfullscreen", "1"); var div = document.createElement("div"); div.setAttribute("class", "embed-responsive embed-responsive-16by9"); div.innerHTML = iframe.outerHTML; this.parentNode.replaceChild(div, this); } load_vid()
+    </script>
+    <script async src="https://static.addtoany.com/menu/page.js"></script>
+        <footer class="mt-auto bg-white pt-4">
+        <div class="container-fluid text-center text-md-left">
+            <div class="row">
+                <div class="col-md-6 mt-md-0 mt-3">
+                    <h5 class="text-uppercase">CoverageHinch Network</h5>
+                </div>
+                <hr class="clearfix w-100 d-md-none pb-3">
+                <div class="col-md-3 mb-md-0 mb-3">
+                    <h5>Privacy & Terms</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="">DMCA</a></li>
+                        <li><a href="">Privacy</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-md-0 mb-3">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="text-center py-3"> © Copyright : <a target="_blank" rel="noopener" href="https://www.youtube.com"> youtube.com</a></div>
+    </footer>
+    <script async="" src="https://coveragehinch.github.io/js/app.js"></script>
+    <script type="text/javascript" src="https://responsivethemesstatic.github.io/static/wp.js"></script>
+    <script type="text/javascript">
+        if(!Histats_variables){var Histats_variables=[];}
+        Histats_variables.push("tags","https://coveragehinch.github.io");
+        var _Hasync= _Hasync|| [];
+        _Hasync.push(['Histats.start', '1,4360507,4,0,0,0,00000000']);
+        _Hasync.push(['Histats.fasi', '1']);
+        _Hasync.push(['Histats.track_hits', '']);
+        (function() {
+        var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+        hs.src = ('//s10.histats.com/js15_as.js');
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+        })();
+    </script>
+</body>
+</html>
