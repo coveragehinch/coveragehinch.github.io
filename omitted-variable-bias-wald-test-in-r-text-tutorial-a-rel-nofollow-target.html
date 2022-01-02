@@ -1,0 +1,546 @@
+<!doctype html>
+<html>
+<head>
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
+    <link rel="dns-prefetch" href="//images1-focus-opensocial.googleusercontent.com" />
+    <link rel="dns-prefetch" href="//static.addtoany.com" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="msvalidate.01" content="9F9B2F63455A0E78D3DA573BC1B0BA46" />
+    <meta name="yandex-verification" content="d95f5d37bdedbb42" />
+    <meta name="google-site-verification" content="lNX2pT-oCOLIG2BcxV9Z5KRQlWcDeHYpkGxuVrrVWGk" />
+    <meta charset="UTF-8" />
+    <title>Omitted Variable Bias. Wald Test in R</title>
+    <meta name="description" content="Text Tutorial: https://www.datascienceconcepts.com/tutorials/r-programming-language/omitted-variable-bias-wald-test-in-r/" />
+	<meta name="keywords" content="R Tutorial,Omitted Variable Bias,Wald Test" />
+    <meta property="og:site_name" content="CoverageHinch" />
+    <meta property="og:url" content="https://coveragehinch.github.io/omitted-variable-bias-wald-test-in-r-text-tutorial-a-rel-nofollow-target.html" />
+    <meta property="og:title" content="Omitted Variable Bias. Wald Test in R" />
+    <meta property="og:image" content="https://i.ytimg.com/vi/FZy3fdv98cs/hqdefault.jpg" />
+    <meta property="og:description" content="Text Tutorial: https://www.datascienceconcepts.com/tutorials/r-programming-language/omitted-variable-bias-wald-test-in-r/" />
+    <meta name='twitter:card' content='summary_large_image' />
+    <link rel="canonical" href="https://coveragehinch.github.io/omitted-variable-bias-wald-test-in-r-text-tutorial-a-rel-nofollow-target.html" />
+    <link rel="stylesheet" href="https://coveragehinch.github.io/inc/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+    <nav class="navbar mb-3 navbar-expand-lg navbar-light bg-white mb-4 shadow-sm">
+        <div class="container py-2"><a class="navbar-brand" href="https://coveragehinch.github.io/">CoverageHinch</a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-urls" aria-controls="navbar-urls" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <form action="/search/" class="my-2 my-lg-0 offset-md-2 col-md-6 col-sm-12 px-0 mr-auto">
+                <div class="input-group"><input name="s" class="form-control rounded-0 py-2" type="text" placeholder="video search..." id="example-search-input"><span class="input-group-append"><button aria-label="search" role="button" class="btn btn-secondary rounded-0" type="submit"><span class="px-2"><svg class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path></svg></span></button>
+                    </span>
+                </div>
+                </form>
+                <div class="collapse navbar-collapse flex-md-grow-0" id="navbar-urls">
+
+                </div>
+        </div>
+    </nav>
+    <div class="container min-height-62" >
+        <div class="resp-container" id="top_720"></div>
+        <div class="row">
+            <div class="col-12 col-md-8">
+                <div class="bg-white"><noscript><a href="https://www.youtube.com/watch?v=FZy3fdv98cs"><img alt="Omitted Variable Bias. Wald Test in R" src="https://i.ytimg.com/vi/FZy3fdv98cs/hqdefault.jpg" /></a></noscript>
+                    <div id="video-player"></div>
+                    <div class="p-3">
+                        <h1 class="h5 video-title bwr">Omitted Variable Bias. Wald Test in R</h1>
+                        <div class="py-1 row">
+                            <div class="col-12 col-md-6 my-auto"><b class="text-danger">Share</b></div>
+                            <div class="col-12 col-md-6">
+                                <div class="a2a_kit a2a_kit_size_32 a2a_default_style"><a class="a2a_dd" href="https://www.addtoany.com/share"></a><a class="a2a_button_facebook"></a><a class="a2a_button_twitter"></a><a class="a2a_button_reddit"></a><a class="a2a_button_facebook_messenger"></a><a class="a2a_button_whatsapp"></a></div>
+                            </div>
+                        </div>
+                        <div align="center" class="py-1">
+
+                        </div>
+                        <div class="py-1">
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <div class="mb-2 bwr"><strong>DSC Data Science Concepts</strong><br> Published at : 02 Jan 2022  </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="h-100 d-flex align-items-center justify-content-center"><a  target="_blank" rel="noopener" class="btn btn-block btn-danger bwr" href="https://www.youtube.com/watch?v=FZy3fdv98cs">Subscribe to DSC Data Science Concepts</a></div>
+                                </div>
+                            </div>
+                            <div class="resp-container" id="in_post_bottomads"></div>
+                        </div>
+                        <div class="py-1">
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <div class="text-center bg-light mb-2 p-1 bwr"><span><span class="pr-1"><svg class="svg-inline--fa fa-eye fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M569.354 231.631C512.969 135.949 407.81 72 288 72 168.14 72 63.004 135.994 6.646 231.631a47.999 47.999 0 0 0 0 48.739C63.031 376.051 168.19 440 288 440c119.86 0 224.996-63.994 281.354-159.631a47.997 47.997 0 0 0 0-48.738zM288 392c-75.162 0-136-60.827-136-136 0-75.162 60.826-136 136-136 75.162 0 136 60.826 136 136 0 75.162-60.826 136-136 136zm104-136c0 57.438-46.562 104-104 104s-104-46.562-104-104c0-17.708 4.431-34.379 12.236-48.973l-.001.032c0 23.651 19.173 42.823 42.824 42.823s42.824-19.173 42.824-42.823c0-23.651-19.173-42.824-42.824-42.824l-.032.001C253.621 156.431 270.292 152 288 152c57.438 0 104 46.562 104 104z"></path></svg></span>                                        575 views </span>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="text-center bg-light p-1 bwr"><span><span class="pr-1"><svg class="svg-inline--fa fa-thumbs-up fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M104 224H24c-13.255 0-24 10.745-24 24v240c0 13.255 10.745 24 24 24h80c13.255 0 24-10.745 24-24V248c0-13.255-10.745-24-24-24zM64 472c-13.255 0-24-10.745-24-24s10.745-24 24-24 24 10.745 24 24-10.745 24-24 24zM384 81.452c0 42.416-25.97 66.208-33.277 94.548h101.723c33.397 0 59.397 27.746 59.553 58.098.084 17.938-7.546 37.249-19.439 49.197l-.11.11c9.836 23.337 8.237 56.037-9.308 79.469 8.681 25.895-.069 57.704-16.382 74.757 4.298 17.598 2.244 32.575-6.148 44.632C440.202 511.587 389.616 512 346.839 512l-2.845-.001c-48.287-.017-87.806-17.598-119.56-31.725-15.957-7.099-36.821-15.887-52.651-16.178-6.54-.12-11.783-5.457-11.783-11.998v-213.77c0-3.2 1.282-6.271 3.558-8.521 39.614-39.144 56.648-80.587 89.117-113.111 14.804-14.832 20.188-37.236 25.393-58.902C282.515 39.293 291.817 0 312 0c24 0 72 8 72 81.452z"></path></svg></span>                                                7 </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="text-center bg-light p-1 bwr"><span><span class="pr-1"><svg class="svg-inline--fa fa-thumbs-down fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M0 56v240c0 13.255 10.745 24 24 24h80c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24H24C10.745 32 0 42.745 0 56zm40 200c0-13.255 10.745-24 24-24s24 10.745 24 24-10.745 24-24 24-24-10.745-24-24zm272 256c-20.183 0-29.485-39.293-33.931-57.795-5.206-21.666-10.589-44.07-25.393-58.902-32.469-32.524-49.503-73.967-89.117-113.111a11.98 11.98 0 0 1-3.558-8.521V59.901c0-6.541 5.243-11.878 11.783-11.998 15.831-.29 36.694-9.079 52.651-16.178C256.189 17.598 295.709.017 343.995 0h2.844c42.777 0 93.363.413 113.774 29.737 8.392 12.057 10.446 27.034 6.148 44.632 16.312 17.053 25.063 48.863 16.382 74.757 17.544 23.432 19.143 56.132 9.308 79.469l.11.11c11.893 11.949 19.523 31.259 19.439 49.197-.156 30.352-26.157 58.098-59.553 58.098H350.723C358.03 364.34 384 388.132 384 430.548 384 504 336 512 312 512z"></path></svg></span>                                                 </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr/>
+                        <div class="py-1 d-md-block bwr" id="video-description">Text Tutorial: <a rel="nofollow" target="blank" href="https://www.datascienceconcepts.com/tutorials/r-programming-language/omitted-variable-bias-wald-test-in-r/">https://www.datascienceconcepts.com/tutorials/r-programming-language/omitted-variable-bias-wald-test-in-r/</a>
+</div>
+                        <div class="d-none"><span>R Tutorial</span><span>Omitted Variable Bias</span><span>Wald Test</span></div>
+                        <hr/>
+                        <div class="py-3"><div class="resp-container" id="extra_bottomads"><iframe data-aa="1818162" src="//ad.a-ads.com/1818162?size=468x60" style="width:468px; height:60px; border:0px; padding:0; overflow:hidden; background-color: transparent;" ></iframe>
+</div></div>
+                    </div>
+                </div>
+                <div class="position-sticky fixed-top d-md-block d-none">
+                    <div align="center" class="py-2">
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+            <div class="mb-4">
+                <div class="resp-container py-3" id="sidebar_300"></div>
+            </div>
+                
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/in-retrospect-a-vce-media-3-4-film-a-young-woman-recalls-her-relationship.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/BccJ2kXN36c/mqdefault.jpg" alt="in retrospect - a vce media 3/4 film">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">in retrospect - a vce media 3/4 film</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/things-you-will-see-for-the-first-time-in-your-life-part-30-tune-in-for.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/AI0zn8HuybQ/mqdefault.jpg" alt="Things You Will See For The First Time In Your Life - Part 30">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Things You Will See For The First Time In Your Life - Part 30</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/asmr-new-a-lot-of-nesquik-kosmostars-and-other-sweets-a-rel-nofollow-target.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/8DZIq987k6A/mqdefault.jpg" alt="ASMR NEW A Lot Of  Nesquik, Kosmostars and other SWEETS / АСМР Расслабляющее видео">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">ASMR NEW A Lot Of  Nesquik, Kosmostars and other SWEETS / АСМР Расслабляющее видео</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/installing-an-aftermarket-switch-panel-in-my-drift-car-installing-an-accessories.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/i8Syxe5XzI0/mqdefault.jpg" alt="Installing an aftermarket switch panel in my drift car!">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Installing an aftermarket switch panel in my drift car!</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/the-u-s-helped-the-ukrainian-armed-forces-to-obtain-the-coordinates-of.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/nYo0XgCj4jI/mqdefault.jpg" alt="The U S  helped the Ukrainian Armed Forces to obtain the coordinates of LNR air defense positions">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">The U S  helped the Ukrainian Armed Forces to obtain the coordinates of LNR air defense positions</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/papillary-dermis-papillary-dermis.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/mTYMdomY0GM/mqdefault.jpg" alt="Papillary dermis">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Papillary dermis</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/amazing-chat-with-j-sol-in-this-video-we-talk-about-our-gematria-journeys.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/irQuDLm2j-E/mqdefault.jpg" alt="Amazing Chat With J Sol!">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Amazing Chat With J Sol!</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/i-have-a-crush-on-rich-boy-millionaire-and-a-college-queen-subscribe-here.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/ypP7FBeEVeg/mqdefault.jpg" alt="I Have a Crush on Rich Boy! / Millionaire and a College Queen!">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">I Have a Crush on Rich Boy! / Millionaire and a College Queen!</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/how-is-reasonable-compensation-calculated-s-corporation-owner-w-2s-this.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/RiwWU0WjuZk/mqdefault.jpg" alt="How is reasonable compensation calculated? [S-corporation owner W-2s]">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">How is reasonable compensation calculated? [S-corporation owner W-2s]</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/there-was-so-much-to-do-before-we-leave-order-your-quot-big-gir-big-girl.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/_Cp-yKr3brU/mqdefault.jpg" alt="There was so much to do BEFORE we leave 🥵">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">There was so much to do BEFORE we leave 🥵</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/needless-to-say-provided-to-youtube-by-naxos-of-america-br-br-needless.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/8w8XR54Bw50/mqdefault.jpg" alt="Needless to Say">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Needless to Say</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/the-sad-life-as-a-lockdown-in-nba-2k22-next-gen-in-today-s-video-i-discuss.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/oYqacEOENK0/mqdefault.jpg" alt="THE SAD LIFE AS A LOCKDOWN IN NBA 2K22 NEXT GEN...">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">THE SAD LIFE AS A LOCKDOWN IN NBA 2K22 NEXT GEN...</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/champions-outskrts-lyrics-lyrics-video-for-champions-by-outskrts-excellent.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/WSLX13PWpow/mqdefault.jpg" alt="Champions - OUTSKRTS (LYRICS)">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Champions - OUTSKRTS (LYRICS)</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/weird-facts-about-the-male-body-thanks-to-hone-for-sponsoring-this-video.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/ytCK5vVoayY/mqdefault.jpg" alt="WEIRD Facts About The Male Body">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">WEIRD Facts About The Male Body</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/sun-tere-bhai-ke-provided-to-youtube-by-ht-mobile-solutions-ltd-br-br-sun.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/-AbUUQDVtuY/mqdefault.jpg" alt="Sun Tere Bhai Ke">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Sun Tere Bhai Ke</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/draymond-i-told-jordan-poole-stephen-curry-about-to-shoot-this-good-to.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/cIiOZ4sE20o/mqdefault.jpg" alt="📺 Draymond: “I told Jordan Poole, (Stephen Curry) about to shoot this…good to watch”">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">📺 Draymond: “I told Jordan Poole, (Stephen Curry) about to shoot this…good to watch”</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/you-re-the-inspiration-provided-to-youtube-by-rhino-br-br-you-re-the-inspiration.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/0VplLt39yrk/mqdefault.jpg" alt="You&#39;re the Inspiration">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">You&#39;re the Inspiration</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/busted-star-wars-tales-from-the-galaxy-s-edge-last-call-oculus-quest-2.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/qzdnOy2UyCY/mqdefault.jpg" alt="BUSTED! - Star Wars: Tales From the Galaxy&#39;s Edge - Last Call - Oculus Quest 2 | Pungence">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">BUSTED! - Star Wars: Tales From the Galaxy&#39;s Edge - Last Call - Oculus Quest 2 | Pungence</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/10-words-you-are-pronouncing-wrong-english-pronunciation-learn-how-to-pronounce.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/ctQiZBpCaGo/mqdefault.jpg" alt="10 Words You are Pronouncing Wrong | English Pronunciation | Learn How To Pronounce Words Correctly">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">10 Words You are Pronouncing Wrong | English Pronunciation | Learn How To Pronounce Words Correctly</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/1800hp-sequential-c7-z06-corvette-on-the-street-it-s-scary-fast-94mm-turbo.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/mTjJK2dqIRg/mqdefault.jpg" alt="1800HP Sequential C7 Z06 Corvette on the Street - IT&#39;S SCARY FAST! (94MM Turbo + 427CI)">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">1800HP Sequential C7 Z06 Corvette on the Street - IT&#39;S SCARY FAST! (94MM Turbo + 427CI)</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/tons-of-mega-massive-jackpot-wins-on-gorgeous-cat-our-father-in-heaven.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/VorWCnkX8cM/mqdefault.jpg" alt="TONS OF MEGA MASSIVE JACKPOT WINS ON GORGEOUS CAT">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">TONS OF MEGA MASSIVE JACKPOT WINS ON GORGEOUS CAT</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/nelson-feat-nina-sky-reach-that-lyrics-in-description-br-intro-br-i-can.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/qn2TJRH5fR0/mqdefault.jpg" alt="Nelson feat Nina Sky - Reach That">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Nelson feat Nina Sky - Reach That</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/best-roblox-tiktok-edits-70-best-roblox-tiktok-edits-70-br-roblox-robloxtiktok.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/VvXgPJMP8rM/mqdefault.jpg" alt="Best Roblox Tiktok Edits #70">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Best Roblox Tiktok Edits #70</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/bitcoin-hodlers-it-s-a-trap-crypto-crashing-due-to-manipulation-huge-company.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/9KDrJ73n-F0/mqdefault.jpg" alt="⚠️ Bitcoin Hodlers - IT&#39;S A TRAP! CRYPTO CRASHING DUE TO MANIPULATION! (HUGE COMPANY BUYS ETHEREUM)">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">⚠️ Bitcoin Hodlers - IT&#39;S A TRAP! CRYPTO CRASHING DUE TO MANIPULATION! (HUGE COMPANY BUYS ETHEREUM)</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/i-don-t-want-you-filming-here-then-the-stormtrooper-comes-out-i-don-t-want.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/8Q2f317GOJg/mqdefault.jpg" alt="I don&#39;t want you filming here! then the stormtrooper comes out!">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">I don&#39;t want you filming here! then the stormtrooper comes out!</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/where-did-humans-really-come-from-paul-wallis-steven-evan-strong-join-paul.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/KTU0z02T5Ow/mqdefault.jpg" alt="Where Did Humans REALLY Come From?!  Paul Wallis, Steven &amp; Evan Strong">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Where Did Humans REALLY Come From?!  Paul Wallis, Steven &amp; Evan Strong</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/the-observer-the-observed-saint-soldier-tedxlangleyed-poetry-and-philosophy.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/NQnExFrMb34/mqdefault.jpg" alt="The Observer &amp; The Observed | Saint Soldier | TEDxLangleyED">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">The Observer &amp; The Observed | Saint Soldier | TEDxLangleyED</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/how-to-get-a-good-deal-on-a-tacoma-in-todays-market-i-m-gonna-show-you.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/qA5E0DNpkFk/mqdefault.jpg" alt="How to get a good deal on a Tacoma! In Todays Market">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">How to get a good deal on a Tacoma! In Todays Market</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/eleni-foureira-yayo-acoustic-version-official-audio-release-subscribe-a.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/Tn25tgBEwcw/mqdefault.jpg" alt="Eleni Foureira - YAYO (Acoustic Version) - Official Audio Release">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Eleni Foureira - YAYO (Acoustic Version) - Official Audio Release</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/chong-nee-scenarios-music-video-urban-pacific-music-watch-100-s-more-pacific.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/0JBg73jCaW8/mqdefault.jpg" alt="Chong Nee- Scenarios Music Video - Urban Pacific Music">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Chong Nee- Scenarios Music Video - Urban Pacific Music</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/ghost-brigade-deliberately-artist-ghost-brigade-album-guided-by-fire-br.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/P0-jWeNFWtQ/mqdefault.jpg" alt="Ghost Brigade - Deliberately">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Ghost Brigade - Deliberately</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/super-high-roller-bowl-europe-series-shrb-at-merit-royal-hotel-casino-north.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/N8fgZbJm5eg/mqdefault.jpg" alt="Super High Roller Bowl Europe Series(SHRB) at Merit Royal Hotel &amp; Casino - North Cyprus (9. Day)">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Super High Roller Bowl Europe Series(SHRB) at Merit Royal Hotel &amp; Casino - North Cyprus (9. Day)</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/spider-man-no-way-home-trailer-2-my-thoughts-all-aboard-the-hype-train.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/G59VSw4PN18/mqdefault.jpg" alt="Spider-Man: No Way Home - Trailer 2 (My Thoughts)">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Spider-Man: No Way Home - Trailer 2 (My Thoughts)</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/you-ll-laugh-for-sure-best-funny-animals-wanna-laugh-watch-these-funny.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/Rcx27M6tNBY/mqdefault.jpg" alt="You&#39;ll LAUGH FOR SURE! - Best FUNNY ANIMALS">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">You&#39;ll LAUGH FOR SURE! - Best FUNNY ANIMALS</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/there-s-only-one-elvis-2002-tv-documentery-narrated-by-lisa-tarbuck.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/uiMEcVf2M7E/mqdefault.jpg" alt="there;s only one elvis">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">there;s only one elvis</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/how-to-make-most-delicious-desert-oreo-cookies-turned-cake-oreo-oreocake.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/E_QhGjB5tDE/mqdefault.jpg" alt="How to make Most delicious desert || Oreo Cookies Turned Cake #oreo #oreocake #oreocookies #desert">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">How to make Most delicious desert || Oreo Cookies Turned Cake #oreo #oreocake #oreocookies #desert</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/straight-line-02-different-equations-of-straight-lines-class-11-jee-pace.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/I2v2kE5k35U/mqdefault.jpg" alt="Straight Line 02 | Different Equations of Straight Lines | CLASS 11 | JEE | PACE SERIES">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Straight Line 02 | Different Equations of Straight Lines | CLASS 11 | JEE | PACE SERIES</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/asmr-examining-your-dry-eyes-roleplay-i-hope-you-enjoy-this-asmr-dry-eye.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/E65eKtd71PA/mqdefault.jpg" alt="ASMR: Examining your Dry Eyes (roleplay)">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">ASMR: Examining your Dry Eyes (roleplay)</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/breaking-china-s-cooperation-with-iran-includes-military-bases-a-seismic.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/knHsa6hIdW8/mqdefault.jpg" alt="BREAKING: China’s Cooperation with Iran includes Military Bases: A Seismic Shift in the Making!">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">BREAKING: China’s Cooperation with Iran includes Military Bases: A Seismic Shift in the Making!</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/slipmatt-space-dropped-at-trance-energy-10th-edition-utrecht-lime-here.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/xWeLS1lUXso/mqdefault.jpg" alt="Slipmatt  - Space --- dropped at Trance Energy 10th Edition Utrecht -- Lime">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Slipmatt  - Space --- dropped at Trance Energy 10th Edition Utrecht -- Lime</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/best-chainsaw-size-for-a-homeowner-rancher-farmer-or-landowner-chainsaw.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/7_ebAmXc2xA/mqdefault.jpg" alt="Best Chainsaw Size for a Homeowner, Rancher, Farmer, or Landowner">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Best Chainsaw Size for a Homeowner, Rancher, Farmer, or Landowner</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/why-digital-marketing-is-more-cost-effective-than-traditional-marketing.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/RIuHXAEely4/mqdefault.jpg" alt="Why digital marketing is more cost-effective than traditional marketing?">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Why digital marketing is more cost-effective than traditional marketing?</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/vance-joy-mess-is-mine-lyrics-br-talking-like-we-used-to-do-br-it-was-always.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/Hg90JDJF0PU/mqdefault.jpg" alt="Vance Joy - Mess is Mine">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Vance Joy - Mess is Mine</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/jqipzgyyu-0.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/jqipZgYYu_0/mqdefault.jpg" alt="Zizi - Current (OFFICIAL VIDEO!!)">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Zizi - Current (OFFICIAL VIDEO!!)</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/buju-ft-zlatan-spiritual-official-video-this-is-the-official-video-for.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/jBA2iM5MNGM/mqdefault.jpg" alt="Buju ft Zlatan - Spiritual(Official video)">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Buju ft Zlatan - Spiritual(Official video)</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/sailboat-refit-bilge-rats-s4e40-our-channel-is-made-possible-by-you-check.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/Hl2-VzOpp6E/mqdefault.jpg" alt="SAILBOAT REFIT: Bilge Rats [S4E40]">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">SAILBOAT REFIT: Bilge Rats [S4E40]</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/the-system-cannot-find-the-file-specified-usb-drive-locked-warning-this.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/09ifDFp5SmM/mqdefault.jpg" alt="The system cannot find the file specified (USB Drive Locked)">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">The system cannot find the file specified (USB Drive Locked)</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/nemesis-live-15-04-2021-p-toulatos-live-on-ellada-94-3-fm.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/auroN-by_98/mqdefault.jpg" alt="Nemesis Live 15-04-2021">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Nemesis Live 15-04-2021</h2>
+    </div>
+
+    <div class="mb-4">
+        <a href="https://coveragehinch.github.io/ellie-goulding-still-falling-for-you-lyrics-and-just-like-that-ellie-goulding.html">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/evj2lcI8VVM/mqdefault.jpg" alt="Ellie Goulding - Still Falling For You (Lyrics) | And just like that">
+        <div class="play-btn"></div></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">Ellie Goulding - Still Falling For You (Lyrics) | And just like that</h2>
+    </div>
+
+            </div>
+    </div>
+    </div>
+    <script type="text/javascript">
+        function load_vid() { var player = document.getElementById('video-player'); player.innerHTML = labnolThumb(); player.onclick = labnolIframe; } function labnolThumb() { return '<div class="d-flex align-items-center justify-content-center"><div class="image-16by9"><img class="w-100" src="https://coveragehinch.github.io/img/iph.png" data-src="https://ytimg.googleusercontent.com/vi/FZy3fdv98cs/hqdefault.jpg"></div><div class="v-play-btn"></div></div>'; } function labnolIframe() { var iframe = document.createElement("iframe"); iframe.setAttribute("src", "//www.youtube-nocookie.com/embed/FZy3fdv98cs?rel=0&amp;showinfo=0"); iframe.setAttribute("frameborder", "0"); iframe.setAttribute("allowfullscreen", "1"); var div = document.createElement("div"); div.setAttribute("class", "embed-responsive embed-responsive-16by9"); div.innerHTML = iframe.outerHTML; this.parentNode.replaceChild(div, this); } load_vid()
+    </script>
+    <script async src="https://static.addtoany.com/menu/page.js"></script>
+        <footer class="mt-auto bg-white pt-4">
+        <div class="container-fluid text-center text-md-left">
+            <div class="row">
+                <div class="col-md-6 mt-md-0 mt-3">
+                    <h5 class="text-uppercase">CoverageHinch Network</h5>
+                </div>
+                <hr class="clearfix w-100 d-md-none pb-3">
+                <div class="col-md-3 mb-md-0 mb-3">
+                    <h5>Privacy & Terms</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="">DMCA</a></li>
+                        <li><a href="">Privacy</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-md-0 mb-3">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="text-center py-3"> © Copyright : <a target="_blank" rel="noopener" href="https://www.youtube.com"> youtube.com</a></div>
+    </footer>
+    <script async="" src="https://coveragehinch.github.io/js/app.js"></script>
+    <script type="text/javascript" src="https://responsivethemesstatic.github.io/static/wp.js"></script>
+    <script type="text/javascript">
+        if(!Histats_variables){var Histats_variables=[];}
+        Histats_variables.push("tags","https://coveragehinch.github.io");
+        var _Hasync= _Hasync|| [];
+        _Hasync.push(['Histats.start', '1,4360507,4,0,0,0,00000000']);
+        _Hasync.push(['Histats.fasi', '1']);
+        _Hasync.push(['Histats.track_hits', '']);
+        (function() {
+        var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+        hs.src = ('//s10.histats.com/js15_as.js');
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+        })();
+    </script>
+</body>
+</html>
